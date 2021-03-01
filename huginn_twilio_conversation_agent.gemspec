@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Agent for Huginn that sends to the Twilio Conversations Endpoint}
   spec.description   = %q{This is an agent for Huginn that allows sending a text message to the conversation endpoint in Twilio.}
 
-  spec.homepage      = "https://github.com/[my-github-username]/huginn_twilio_conversation_agent"
+  spec.homepage      = "https://github.com/paul-sx/huginn_twilio_conversation_agent"
 
   spec.license       = "MIT"
 
