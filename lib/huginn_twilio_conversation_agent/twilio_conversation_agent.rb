@@ -56,6 +56,7 @@ module Agents
 
     def client
       @client ||= Twilio::REST::Client.new interpolated['account_sid'], interpolated['auth_token']
+    end
 
   end
 end
