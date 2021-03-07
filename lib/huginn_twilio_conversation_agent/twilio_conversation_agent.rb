@@ -12,8 +12,6 @@ module Agents
       #{'## Include `twilio-ruby`` in your Gemfile to use this Agent!' if dependencies_missing?}
 
       It is assumed that events have a 'message', 'text', or 'sms' key, the value of which is sent as the content of the text message.  You can use EventFormattingAgent if your event does not provide these keys.
-
-
       
     MD
 
@@ -21,7 +19,7 @@ module Agents
       {
         'account_sid' => 'ACxxxxxxxxxxxxxxxxxxxxxxxxxx',
         'auth_token' => 'xxxxxxxxxxxxxxxxxxxx',
-        'conversation_sid' => 'CHxxxxxxxxxxxxxxxx'
+        'conversation_sid' => 'CHxxxxxxxxxxxxxxxx',
         'expected_receive_period_in_days' => '1'
       }
     end
