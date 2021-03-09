@@ -33,8 +33,9 @@ module Agents
     def receive(incoming_events)
       interpolate_with_each(incoming_events) do |event|
         message = (event.payload['message'].presence || event.payload['text'].presence || event.payload['sms'].presence).to_s
+        author = (event.payload['author'].presencei || event.payload['from']).to_s
         if message.present?
-          send_message message
+          send_message message, author
         end
       end
     end
@@ -45,11 +46,18 @@ module Agents
       last_receive_at && last_receive_at > interpolated['expected_receive_period_in_days'].to_i.days.ago && !recent_error_logs?
     end
 
-    def send_message(message)
-      client.conversations
-        .conversations(interpolated['conversation_sid'])
-        .messages
-        .create( body: message )
+    def send_message(message, author)
+      if author.present?
+        client.conversations
+          .conversations(interpolated['conversation_sid'])
+          .messages
+          .create( author: author, body: message )
+      else
+        client.conversations
+          .conversations(interpolated['conversation_sid'])
+          .messages
+          .create( body: message )
+      end
     end
 
     def client
