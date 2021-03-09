@@ -33,7 +33,7 @@ module Agents
     def receive(incoming_events)
       interpolate_with_each(incoming_events) do |event|
         message = (event.payload['message'].presence || event.payload['text'].presence || event.payload['sms'].presence).to_s
-        author = (event.payload['author'].presencei || event.payload['from']).to_s
+        author = (event.payload['author'].presence || event.payload['from'].presence).to_s
         if message.present?
           send_message message, author
         end
