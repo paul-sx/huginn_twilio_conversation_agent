@@ -1,8 +1,7 @@
 # TwilioConversationAgent
 
-Welcome to your new agent gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/huginn_twilio_conversation_agent`. To experiment with that code, run `bin/console` for an interactive prompt.
+TwilioConversationAgent is a [Huginn](https://github.com/huginn/huginn) agent designed for sending messages to Twilio conversations.  Huginn comes with a Twilio send Agent, but the agent is not able to send messages to conversations.  
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -11,9 +10,9 @@ This gem is run as part of the [Huginn](https://github.com/huginn/huginn) projec
 Add this string to your Huginn's .env `ADDITIONAL_GEMS` configuration:
 
 ```ruby
-huginn_twilio_conversation_agent
+huginn_twilio_conversation_agent(github: paul-sx/huginn_twilio_conversation_agent)
 # when only using this agent gem it should look like this:
-ADDITIONAL_GEMS=huginn_twilio_conversation_agent
+ADDITIONAL_GEMS=huginn_twilio_conversation_agent(github: paul-sx/huginn_twilio_conversation_agent)
 ```
 
 And then execute:
@@ -22,7 +21,7 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+After including in Huginn, create an agent.  The agent will take events that can be interpolated and sent.
 
 ## Development
 
@@ -40,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/huginn_twilio_conversation_agent/fork )
+1. Fork it ( https://github.com/paul-sx/huginn_twilio_conversation_agent/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
